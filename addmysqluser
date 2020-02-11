@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "Choose name for MySQL user:"
+read user
+
+echo "Choose a password for user:"
+read password
+
+echo "Insert into database..."
+mysql -u root -Bse "CREATE USER '$user'@'localhost' IDENTIFIED BY '$password'; create database $user; grant all privileges on $user.* to '$user'@'loc$
+
+echo "User successfully added with his database."
+
+exit 0
