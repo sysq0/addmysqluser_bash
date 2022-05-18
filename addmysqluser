@@ -6,8 +6,11 @@ read user
 echo "Choose a password for user:"
 read password
 
+echo "Choose host for user:"
+read host
+
 echo "Insert into database..."
-mysql -u root -Bse "CREATE USER '$user'@'localhost' IDENTIFIED BY '$password'; create database $user; grant all privileges on $user.* to '$user'@'loc$
+mysql -u root -Bse "CREATE USER '$user'@'localhost' IDENTIFIED BY '$password'; create database $user; grant all privileges on $user.* to '$user'@'$host';";
 
 echo "User successfully added with his database."
 
